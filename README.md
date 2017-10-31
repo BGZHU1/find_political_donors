@@ -22,13 +22,12 @@
 
 3) **time /space trade off & special considerations** :
 
-
-
         a. for the incoming data stream : 
         
         I.for each key (CMTE_ID + ZIPCODE) :
         
-          * create key/objects mapping to store running median results (running median is calculated using a               seperate class).
+          * create key/objects mapping to store running median results 
+          (running median is calculated using a seperate class).
           
           * create key/value mapping in dictionay (hashMap) for the running total, running count record
 
