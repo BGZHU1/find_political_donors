@@ -30,11 +30,7 @@
 
         II. for the running median, using min/max heap for the sorting efficiency 
 
-
-
         b. for sort by date processing : using batch processing at one time
-
-
 
         c. edge cases : missing value, validate value, and also sorting ID / date pairs
 
