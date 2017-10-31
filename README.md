@@ -1,27 +1,49 @@
-#Python version - Python 2.7
+# **Find_Political_Donors : **(python 2.7)
 
- The file I wrote has two parts :
+## Part one  (source code inside src folder) :
 
-1. Part one is in the source code inside the src folder
-Two files :
-1) find_political_donors.py for major processing
-2) functions.py for calculation functions
-run :./run.sh to run the src
+1) **run** :  ./run.sh 
 
-2. Part two is the two additional tests I wrote :
-1) test two is for the missing value, data validation test
-2) test three tests the correctness of output: the running median and the sorting by ID and then by date
 
-run :./run_tests.sh (in the insight_testsuite folder)
 
-3.
-1) for processing the medianvals_by_zip result : I store it in dictionary.
-key : CMTE_ID + ZIP_CODE
-value : list which adding the TRANSACTION_AMT each time the new record come in
+2) **file structure** : 
 
-2) for processing the medianvals_by_date result : I store it in dictionary.
-key : CMTE_ID + TRANSACTION_AMT
-value : list which adding the TRANSACTION_AMT
-calculate once in the end
-In order to sort CMTE_ID and TRANSACTION_AMT, I first make the key value an dictionary,
-then reconstruct the pairs using the sorted key pair
+
+
+a. main file - find_political_donors.py
+
+b.  using min/max heap for running median calculation : runningMedian.py
+
+c. calculate the sort by date result - calculateSortByDate.py
+
+d. write the results : writeToFiles.py
+
+
+
+3) **time /space trade off & special considerations** :
+
+
+
+a. for the incoming data stream : for each key pair, create key/objects  mapping to store running results .
+
+for the running median, using min/max heap for the sorting efficiency 
+
+
+
+b. for sort by date processing : using batch processing at one time
+
+
+
+c. edge cases : missing value, validate value, and also sorting ID / date pairs
+
+
+
+
+
+## Part Two  (3 tests) :
+
+1) **run** : ./run_tests.sh (in the insight_testsuite folder)
+
+
+
+2) **test cases** : one original test case, one tests missing value, one tests the correctness of the output and sorting results.
