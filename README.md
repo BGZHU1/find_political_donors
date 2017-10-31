@@ -26,13 +26,33 @@
 
         a. for the incoming data stream : 
         
-        I.for each key pair, create key/objects  mapping to store running results .
+        I.for each key (CMTE_ID + ZIPCODE) :
+        
+          * create key/objects mapping to store running median results (running median is calculated using a seperate                  class).
+          
+          * create key/value mapping in dictionay (hashMap) for the running total, running count record
 
         II. for the running median, using min/max heap for the sorting efficiency 
+        
 
-        b. for sort by date processing : using batch processing at one time
+        b. for sort by date processing :
+        
+        I. for each key (CMTE_ID + Date) :
+            
+           * using batch processing at one time, store all the key/list in a dictionry,
+            where the list contains all the dollar acount for that transaction.
 
-        c. edge cases : missing value, validate value, and also sorting ID / date pairs
+        II. sorting the value first based on CMTE_ID, then the given date :
+            * first construct a new dictionary to sort CMTE_ID and date
+            * reconstruct the new maaping with original list value
+            * since the date is month/day/year, when sorting, reformat it to year/month/day, 
+            and change it back after sorting 
+        
+        
+        c. edge cases : missing value, malformat value, same date in different year, repeatitive value, 
+                       missing different fields
+        
+       
 
 
 
@@ -44,4 +64,4 @@
 
 
 
-2) **test cases** : one original test case, one tests missing value, one tests the correctness of the output and sorting results.
+2) **test cases** : one original test case, one tests missing value, malformat value, one tests the correctness of the output and sorting results.
