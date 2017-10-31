@@ -24,9 +24,11 @@
 
 
 
-        a. for the incoming data stream : for each key pair, create key/objects  mapping to store running results .
+        a. for the incoming data stream : 
+        
+        I.for each key pair, create key/objects  mapping to store running results .
 
-        for the running median, using min/max heap for the sorting efficiency 
+        II. for the running median, using min/max heap for the sorting efficiency 
 
 
 
