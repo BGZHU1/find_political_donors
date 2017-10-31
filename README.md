@@ -6,7 +6,7 @@
 
 
 
-2) **file structure** : 
+2) **source files** : 
 
 
 
